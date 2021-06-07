@@ -63,7 +63,7 @@ public class ValidLoginPage {
 
     public ValidLoginPage getEmail(String email) {
         this.email.clear();
-        this.email.sendKeys("ghosh.p189@gmail.com");
+        this.email.sendKeys("ghosh.p89@gmail.com");
         return this;
     }
 
@@ -74,7 +74,7 @@ public class ValidLoginPage {
 
     public ValidLoginPage getpassword(String password) {
         this.password.clear();
-        this.password.sendKeys("Sarit@1983");
+        this.password.sendKeys("xyz@193");
         return this;
     }
 
