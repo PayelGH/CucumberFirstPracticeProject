@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "BDD.firstPackage.StepDefinition",
         dryRun = false,
         monochrome = true,
-        plugin = {"pretty", "html:test-output"}
+        plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class ValidLoginTestRun {
 
