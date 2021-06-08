@@ -11,7 +11,9 @@ import org.junit.runner.RunWith;
         dryRun = false,
         monochrome = true,
         plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        //plugin ={"pretty", "html: target/cucumber-html-reports"}--for normal report
 )
 public class ValidLoginTestRun {
 
 }
+//https://www.toolsqa.com/extent-report/extent-report-for-cucumber-junit-project/ for reports and screenshot

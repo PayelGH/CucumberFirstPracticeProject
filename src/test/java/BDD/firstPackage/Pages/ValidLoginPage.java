@@ -24,6 +24,9 @@ public class ValidLoginPage {
     @FindBy(xpath = "//*[@id=\"signInSubmit\"]")
     private WebElement submitBtn;
 
+    @FindBy(xpath = "//*[contains(text(), 'Sign Out')] ")
+    private WebElement logOut;
+
     //constructor to create pages
     public ValidLoginPage(WebDriver driver) {
         this.driver = driver;
@@ -55,6 +58,10 @@ public class ValidLoginPage {
         this.submitBtn = submitBtn;
     }
 
+    public void setLogOut(WebElement logOut) {
+        this.logOut = logOut;
+    }
+
     //action methods to be called in test cases
     public ValidLoginPage getHelloSignIn() {
         this.helloSignInTab.click();
@@ -63,7 +70,7 @@ public class ValidLoginPage {
 
     public ValidLoginPage getEmail(String email) {
         this.email.clear();
-        this.email.sendKeys("ghosh.p89@gmail.com");
+        this.email.sendKeys("ghosh.p189@gmail.com");
         return this;
     }
 
@@ -74,12 +81,16 @@ public class ValidLoginPage {
 
     public ValidLoginPage getpassword(String password) {
         this.password.clear();
-        this.password.sendKeys("xyz@193");
+        this.password.sendKeys("Sarit@1983");
         return this;
     }
 
     public ValidLoginPage getsubmitBtn() {
         this.submitBtn.click();
+        return new ValidLoginPage(driver);
+    }
+    public ValidLoginPage getLogOut() {
+        this.logOut.click();
         return new ValidLoginPage(driver);
     }
 }

@@ -3,9 +3,11 @@ package BDD.firstPackage.StepDefinition;
 import BDD.firstPackage.Pages.ValidLoginPage;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.interactions.Actions;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class StepsForLogin {
@@ -45,7 +47,22 @@ public class StepsForLogin {
         title= driver.getTitle();
         Assert.assertEquals("Amazon Sign In", title);
     }
+    @When(": user clicks signOut tab")
+    public void user_clicks_sign_out_tab() {
+        ValidLoginPage login1 = new ValidLoginPage(driver);
 
+        Actions action = new Actions(driver);
+        WebElement hover = driver.findElement(By.xpath("//*[@id=\"nav-link-accountList-nav-line-1\"]"));
+        action.moveToElement(hover).perform();
+        Actions action2 = new Actions(driver);
+        WebElement logOut= driver.findElement(By.xpath("//*[contains(text(), 'Sign Out')] "));
+        action2.moveToElement(logOut).click();
+    }
+    @Then(": previous sign it page is seen {string}")
+    public void previous_sign_it_page_is_seen(String title2) {
+    title2= driver.getTitle();
+    Assert.assertEquals("Amazon.ca: Low Prices – Fast Shipping – Millions of Items", title2);
+    }
     @Then(": browser is closed")
     public void browser_is_closed() {
        driver.quit();
